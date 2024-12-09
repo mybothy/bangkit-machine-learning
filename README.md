@@ -8,34 +8,43 @@ The dataset is located in the data folder. It consists of images of 3 different 
 ## Data Testing
 We collected several [sample images](https://github.com/mybothy/bangkit-machine-learning/tree/main/tes) from the internet  to test the model's performance.
 
+## Transfer Learning
+We use [EfficienNetB0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0) for our model transfer learning with some added new layer and also fine tuning it
+
 ## Training the First Model
 ### Model 1:
 - **Description**: Utilizes transfer learning with EfficientNet-B0 but with frozen layers.
 - **Files**:
-  - [`imageclassification2.0.ipynb`](imageclassification2.0.ipynb)
+  - [`imageclassification2_0.ipynb`](imageclassification2_0.ipynb)
   - [`convert`](convert)
 - **Result**: 
-- **How to Use**: Open `imageclassification2.0.ipynb` in Jupyter Notebook, follow the instructions to set up the environment and run the model training.
+- **How to Use**: Open `imageclassification2.0.ipynb` in Colab, follow the instructions to set up the environment and run the model training.
 
 ## Training the Second Model
 ### Model 2:
 - **Description**: Employs the same transfer learning approach but fine-tunes more layers within the CNN infrastructure.
 - **File**:
-  - [`imageclassification2.0.ipynb`](imageclassification2.0.ipynb)
+  - [`imageclassification2_0.ipynb`](imageclassification2_0.ipynb)
   - [`convert2`](convert2)
-- **How to Use**: Open `imageclassification2.0.ipynb` in Jupyter Notebook, follow the instructions to set up the environment and run the model training.
+- **How to Use**: Open `imageclassification2_0.ipynb` in Colab, follow the instructions to set up the environment and run the model training.
 
 ## Training the Third Model
-Model 3:
-Uses transfer learning with additional fine-tuning and unfreezing of some last layers.
-The files FINALBGSBGT.ipynb and ipynb3.0 contain the implementation for this model.
+### FINALBGSBGT (Model 3)
+- **Description**: This folder includes the final model, which has been optimized with several enhancements. It also contains documentation and metadata for the TensorFlow Lite model.
+- **Files**:
+  - [`trytflitemodel.ipynb`](trytflitemodel.ipynb) (creates the metadata for the TFLite model)
+  - [`testmetadata.ipynb`](testmetadata.ipynb) (tests the TFLite model with the added metadata)
+- **How to Run**: Navigate to the [`FINALBGSBGT`](FINALBGSBGT) folder, and run the scripts as follows:
+  - [`trytflitemodel.ipynb`](trytflitemodel.ipynb) to create the metadata
+  - [`testmetadata.ipynb`](testmetadata.ipynb) to test the TFLite model with metadata.
 
 ## FINALBGSBGT
-This folder includes the final model, which has been optimized with several enhancements.
-It also contains documentation and metadata for the TensorFlow Lite model. The trytflitemodel.py script is used to create the metadata, while testmetadata.py is used for testing the TFLite model with the added metadata.
+- This folder [`FINALBGSBGT`](FINALBGSBGT) includes the final model, which has been optimized with several enhancements.
+- It also contains documentation and metadata for the TensorFlow Lite model. The trytflitemodel.ipynb script is used to create the metadata, while testmetadata.ipynb is used for testing the TFLite model with the added metadata.
+- In this folder there is our last final model ['my_model_lite_with_metadata.tflite'](FINALBGSBGT/my_model_lite_with_metadata.tflite) that contain metadata too with labels.txt as the class name
 
-## How To Run?
+<!-- ## How To Run?
 Clone this repository to your local machine.
 Navigate to the desired model's notebook file (convert.ipynb, convert2.ipynb, or FINALBGSBGT.ipynb).
 Follow the instructions within each notebook to set up and run the model training process.
-For testing the models, use the respective scripts (trytflitemodel.py and testmetadata.py) located in the FINALBGSBGT folder.
+For testing the models, use the respective scripts (trytflitemodel.py and testmetadata.py) located in the FINALBGSBGT folder.-->
